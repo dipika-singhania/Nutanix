@@ -1,0 +1,154 @@
+.bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+.widthHundred {
+	width:100%;
+}
+.container{
+	padding:0px;
+	margin:0px;
+}
+#topBar{
+	border-style: solid;
+    border-width: 5px;
+	border-color: green;
+}
+.jumbotron {
+	background-color: darkolivegreen;
+	margin-bottom:0px;
+	border-radius: 0 !important;
+}
+
+.filterElement{
+	padding-left:20px;
+	padding-top:20px;
+}
+#logoImage{
+	height:70px;
+	width:200px
+}
+#logoImage  img {
+	height:inherit;
+	width:inherit;
+}
+#logoDesp{
+	color:#76BD43;
+	margin:20px 10px 0 10px;
+}
+#totalLikes{
+	margin:15px 10px 10px 10px;
+	font-size:1.2em;
+}
+.greenBackground {
+	border-color:#4C7A34;
+	border-width: 2px;
+	background-color:#DFEDD6;
+}
+
+.deals-card {
+	margin-top: 10px;
+	margin-bottom:10px;
+	padding:0px 2px 2px 0px;
+	background-color:#F7F6F6;
+	border-color:#D6D6D0;
+	border-radius:5px;
+	border-width:2px;
+	border-style:solid;
+	min-height:240px;
+	color: #000000;
+}
+
+.deals-card p{
+	margin:0.5px;
+}
+
+.deals-card  img {
+	margin:5px 5px 0px 5px;
+	min-height:140px;
+	max-height:180px;
+	max-width:100px;
+}
+
+.glyphicon-user {
+	margin:0 0 0 5px;
+	font-size:18px;
+}
+
+.glyphicon-chevron-right {
+	margin:5px 0 0 5px;
+	font-size:20px;	
+}
+.dealTitle {
+	color: #5AB7B1;
+	height: 27px;
+	font-size:20px;
+}
+
+.break-left {
+	clear:both;
+}
+.provider {
+	color:#949494;
+	font-size:18px;
+}
+
+.providerPicture {
+	float:left;
+}
+
+.provider-details {
+	font-size:1.1em;
+}
+.offer {
+	margin-top:4px;
+	float:left;
+	border-radius:20px;
+	height:46px;
+	width:46px;
+	background-color:#FF5D55;
+	color:#FFFFFF;
+	border-width:2px;
+	border-style:solid;
+	border-color:#96281B;
+	padding:2px;
+	text-align: center;
+}
+.likes {
+	float:left;
+	margin:4px 0 0 25px;
+	background-color:#E1E1E1;
+	border:1px solid;
+	padding:8px;
+	font-size:1.2em;
+}
+.grey {
+	color:#6C7A89;
+}
+.orangecolor {
+	color:#FF5D55;
+}
+
+.colorgrey {
+	color:#6C7A89;
+	text-decoration: line-through;
+}
+
+.colorgreen {
+	color:#67751C;
+}
+
+.wordWrapHide {
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.paddingBottom {
+	padding-bottom: 10px;
+}
+
+.padZeroLR {
+	padding-left:0px;
+	padding-right:0px;
+}

@@ -1,0 +1,110 @@
+<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Nutanix Deals Hub</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+   	</head>
+	<body>
+		<script src="js/ang.js"></script>
+		<div class="container widthHundred" ng-app="myApp" ng-controller="apiHitCtrl">
+		<div class="jumbotron">
+		  <div class="container text-center">
+			<img id="logoImage" src="https://mms.businesswire.com/media/20140428006661/en/413302/5/nutanix_logo.jpg" alt="nutanix"/>
+			<h3 id="logoDesp"><b> Finding deals made easy!</b></h3>
+			<p id="totalLikes">
+				<span>
+					<b>Total Likes : {{totalLikes}} | </b>
+				</span>
+				<span>
+					<b>Total Api Hits : {{api_hits}}</b>
+				</span>
+			</p>
+		  </div>
+		</div>
+		<div class="container-fluid bg-2">
+			<div class="alert alert-success"  ng-show="successPresent">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="closeSuccess()">&times;</a>
+				<strong>Success!</strong> {{ successMessage }}
+			</div>
+			<div class="alert alert-danger" ng-show="alertPresent">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="closeAlert()">&times;</a>
+				<strong>Error!</strong> {{ alertMessage }}
+			</div>
+			<div class="form-horizontal filterElement">
+				<div class="form-group">
+					<label class="control-label">    We have {{deals.length}} deals. They are:</label>
+					<input type="search" ng-model="dealFilter" placeholder="filter deals..." aria-label="filter deals" />
+				</div>
+			</div>
+			<div class="row"  ng-repeat="threeGrp in dealInGroups">
+				<div class="col-sm-4" ng-repeat="deal in threeGrp | filter:dealFilter">
+					<div class="deals-card">
+						<p><b>
+						<span>
+							<i class="glyphicon glyphicon-chevron-right"></i>
+						</span>
+						<span class="dealTitle">
+								{{deal.name}}
+						</span>
+						</b></p>
+						<p><b>
+							<span>
+							<i class="glyphicon glyphicon-user"></i>
+							</span>
+							<span class="provider">
+							{{ deal.provider }}
+							</span>
+						</b></p>
+						<div class="row">
+							<div class="providerPicture col-sm-5">
+								<img ng-src='{{deal.image}}' alt="itemImage"/>
+							</div>
+							<div class="provider-details col-sm-7">
+								<p class="orangecolor"><b>
+									<span ng-repeat="rp in deal.ratingPosList"><i class="fa fa-star"></i></span>
+									<span ng-show="deal.rateHalfReuired"><i class="fa fa-star-half-o"></i></span>
+									<span class="grey" ng-repeat="rn in deal.ratingNegList"><i class="fa fa-star-o"></i></span>
+									<span>{{deal.rating}}</span>
+								</b></p>
+								<p class="wordWrapHide"><b>
+									<span><i class="glyphicon glyphicon-link"></i></span>
+									<span>Link:</span>
+									<span>
+									<a ng-href='{{deal.link}}' target="_blank">{{deal.showLink}}</a>
+									</span>
+								</b></p>
+								<p><b>
+									<span>Actual Price: </span>
+									<span><i class="fa fa-inr"></i></span>
+									<span class="colorgrey price">{{deal.actual_price}}</span>
+								</b></p>
+								<p><b>
+									<span><i class="glyphicon glyphicon-tag"></i></span>
+									<span>Final Price: </span>
+									<span><i class="fa fa-inr"></i></span>
+									<span class="colorgreen price">{{deal.final_price}}</span>
+								</b></p>
+								<p><b>
+									<div class="offer">
+										<p><b>{{deal.discount}}% off</b></p>
+									</div>
+									<button  class="likes" ng-click="updateLikesStorage(deal.name)">
+										<span><i class="glyphicon glyphicon-thumbs-up"></i></span>
+										<span>{{deal.likes}}</span>
+									</button>
+								</b></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
